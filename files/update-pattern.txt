@@ -1,0 +1,3 @@
+INSERT,3,Juliana,100
+UPDATE,1,Fernando,98
+DELETE,2

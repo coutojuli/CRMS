@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    text-align: left;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
+    line-height: 1.5;
+}
+.row{
+    max-width: 91rem;
+    margin: 20px 60px 20px 128px;
+}
+.top-bar, .top-bar ul {
+    background-color: #bfb499;
+}
+.grid-container{
+    max-width: 90rem;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+.tabs-title>a:focus, .tabs-title>a[aria-selected=true] {
+    background: #bfb499;
+}
+.column .row{
+    float: none;
+}
+.column, .columns {
+    width: 100%;
+    float: left;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
+}
+.cardHeader {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #bfb499;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    text-align: center;
+    font-size: 20px;
+}
+.card-body {
+    margin: 10px;
+    font-size: 15px;
+}
+.validation{
+    color:red;
+}
+.form-container{
+    margin:auto;
+    width:100%;
+    border: 1px solid #bfb499;
+    padding:20px;
+}
+.registration-container{
+    width:45%;
+    max-width: 90rem;
+    margin: 30px auto 100px auto;
+}
+.btnSubmit {
+    color: black;
+    background-color: #bfb499;
+    border-color: rgba(0, 128, 0, 0.05);
+    text-align: center;
+    font-size: 18px;
+    height: 35px;
+    width: 100px;
+    margin-right: 20px;
+    /*margin:8px auto;*/
+}
+.table {
+    font-size: 16px;
+}
+.table tbody tr:nth-child(even) {
+    background-color: #bfb499;
+}
+.form-header {
+    padding: 0.75rem 1.25rem;
+    background-color: #bfb499;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    width: 100%;
+    margin: 30px auto 0px auto;
+}
+.form-header h2 {
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+}
+.h3-search{
+    padding:20px 0px 5px 20px;
+}
+.p-search{
+    padding:20px 0px 0px 0px;
+}
+.footer{
+    background-color:#bfb499;
+    padding: 20px 30px 20px 50px;
+}
+.footer-left{
+    align-items: flex-start;
+}
+.footer-left a{
+    padding: 10px 70px 10px 70px;
+}
+.footer-right{
+    align-items: flex-end;
+}
+.p-footer{
+    text-justify: center;
+    max-width: 90%;
+    padding: 10px 40px 10px 40px;
+}
+.details{
+    margin: 50px;
+}
+.h3-home{
+    padding:20px 0px 10px 0px;
+}
+.grid-container{
+    max-width:90rem;
+}
