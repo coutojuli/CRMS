@@ -41,7 +41,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 ?>
 <div class="grid-container">
     <div class="form-header">
-        <h2>Are you sure you want to delete this car?</h2>
+        <h2>Are you sure you want to delete the car with ID <?php echo trim($_GET["id"]);?>?</h2>
     </div>
     <div class=" tabs-content" data-tabs-content="example-tabs">
         <div class="tabs-panel is-active" id="delete-browser">

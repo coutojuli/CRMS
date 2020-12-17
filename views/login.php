@@ -89,7 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-<div class="grid-container">
+<div class="grid-container login">
     <div class="registration-container">
     <div class="form-header">
         <h2>Login</h2>

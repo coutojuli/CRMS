@@ -194,6 +194,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 </div>
                                 <div class="cell medium-4">
                                     <select name="type" value="<?php echo $type; ?>">
+                                        <option value="Car">Car</option>
                                         <option value="SUV">SUV</option>
                                         <option value="Truck">Truck</option>
                                         <option value="Van">Van</option>

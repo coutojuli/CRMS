@@ -3,6 +3,7 @@ body{
     text-align: left;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;   
     line-height: 1.5;
+
 }
 .row{
     max-width: 91rem;
@@ -15,6 +16,11 @@ body{
     max-width: 90rem;
     margin-top: 30px;
     margin-bottom: 100px;
+    min-height: 500px;
+    
+}
+.login{
+    padding: 50px;
 }
 .tabs-title>a:focus, .tabs-title>a[aria-selected=true] {
     background: #bfb499;

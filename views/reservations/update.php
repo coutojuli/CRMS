@@ -287,6 +287,8 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 </div>
 </div><br>
 <p><a href="reservations.php">Go back to Reservation List</a></p>
+</div>
+
 <?php
 require_once '../footer.php';
 

@@ -4,7 +4,6 @@ require_once '../../DAL/ConnectionManager.php';
 
 // Process delete operation after confirmation
 
-var_dump($_GET["id"]);
 if(isset($_GET["id"]) && !empty($_GET["id"])){
 
     $sql = "SELECT * FROM Reservations WHERE ID = ?";
@@ -19,7 +18,6 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){
             $result = mysqli_stmt_get_result($stmt);
-    
             if(mysqli_num_rows($result) == 1){
                 /* Fetch result row as an associative array. Since the result set contains only one row, we don't need to use while loop */
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -38,13 +36,14 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
                 }
             }
         }
-
+        
         $now = strtotime((new DateTime())->format('Y-m-d'));
         $pickup = strtotime($pickup);
         $dropoff = strtotime($dropoff);
 
         if ($now > $dropoff){
-            header("location: reservations.php");
+            $err = "Error Deleting Reservation | Dropoff date is before today | Action denied.";
+            header("location: reservations.php?err=$err");
             exit();                     
         } 
         else if($pickup > $now){
@@ -103,12 +102,6 @@ if(isset($_GET["id"]) && !empty($_GET["id"])){
 }
 ?>
 <div class="grid-container">
-    <?php
-var_dump($dropoff);
-        var_dump($pickup);
-        var_dump($now);
-        var_dump($param_id);
-        ?>
     <div class="form-header">
         <h2>Are you sure you want to delete this reservation?</h2>
     </div>

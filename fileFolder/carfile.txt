@@ -1,5 +1,3 @@
-INSERT,Renault Sandero,Car,Standard,2,4,Automatic,50.02,Available,No,Yes,No,Yes,No,Yes,No,Yes
-UPDATE,Ford Ka,Car,Compact,4,4,Automatic,50.02,Available,No,Yes,No,Yes,No,Yes,No,Yes,10
-DELETE,10
-INSERT,Eco Sport,Car,Standard,2,4,Automatic,50.02,Available,No,Yes,No,Yes,No,Yes,No,Yes
-INSERT,Fiat Uno,Car,Standard,2,4,Automatic,50.02,Available,No,Yes,No,Yes,No,Yes,No,Yes
+INSERT,Ford Ka,Car,Standard,2,4,Automatic,50.02,Available,No,Yes,No,Yes,No,Yes,No,Yes
+UPDATE,Ford Escape,Car,Compact,4,4,Automatic,50.02,Available,No,Yes,No,Yes,No,Yes,No,Yes,18
+DELETE,23

@@ -5,8 +5,10 @@ require_once '../../DAL/ConnectionManager.php';
 
 // Check existence of id parameter before processing further
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
-    
+    $carid =  trim($_GET["id"]);
+    var_dump($carid);
     // Prepare a select statement
+    
     $sql = "SELECT * FROM Cars WHERE ID = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
@@ -68,13 +70,13 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
 }
 
 // Define variables and initialize with empty values
-$name = $carid = $carname = $pickup = $dropoff = $location = $insurance = $price = "";
+$name =  $carname = $pickup = $dropoff = $location = $insurance = $price = "";
 $name_err = $car_err = $pickup_err = $dropoff_err = $location_err = $insurance_err = $price_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validations
-    $carid = $_POST["id"];
+    $carid = trim($_POST["id"]);
 
     $input_name = trim($_POST["name"]);
     if(empty($input_name)){
@@ -93,9 +95,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $now = strtotime((new DateTime())->format('Y-m-d'));
     $pickupdate = strtotime(trim($_POST["pickup"]));
     $dropoffdate = strtotime(trim($_POST["dropoff"]));
-    var_dump($now);
-    var_dump($pickupdate);
-    var_dump($dropoffdate);
 
     $input_pickup = trim($_POST["pickup"]);
     if(empty($input_pickup)){
@@ -215,9 +214,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class=" tabs-content" data-tabs-content="example-tabs">
                 <div class="tabs-panel is-active" id="insert-browser">
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <input type="hidden" name="id" value="<?php echo $carid; ?>"/>
                     <div class="grid-x grid-margin-x grid-padding-y">
                         <div class="cell medium-2">
-                            <input type="hidden" name="id" value="<?php echo $param_id; ?>"/>
+                            
                             <label>Email:</label>
                         </div>
                         <div class="cell medium-4">

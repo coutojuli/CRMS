@@ -74,53 +74,54 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
        $availability = $input_availability;
    }
 
-   if(!isset($_POST['interior'])) {
+   if(!isset($_POST["interior"])) {
        $interior = "No";    
    } else{
-       $interior = $input_interior;
+       $interior = "Yes";
    }
-   
-   if(!isset($_POST['radio'])) {
+
+   if(!isset($_POST["radio"])) {
        $radio = "No";   
    } else{
        $radio = "Yes";
    }
 
-   if(!isset($_POST['air'])) {
+   if(!isset($_POST["air"])) {
        $air = "No";    
    } else{
        $air = "Yes";
    }
 
-   if(!isset($_POST['door'])) {
+   if(!isset($_POST["door"])) {
        $door = "No";        
    } else{
        $door = "Yes";
    }
 
-   if(!isset($_POST['wheel'])) {
+   if(!isset($_POST["wheel"])) {
        $wheel = "No";   
    } else{
        $wheel = "Yes";
    }
 
-   if(!isset($_POST['control'])) {
+   if(!isset($_POST["control"])) {
        $control = "No";     
    } else{
        $control = "Yes";
    }
 
-   if(!isset($_POST['mirror'])) {
+   if(!isset($_POST["mirror"])) {
        $mirror = "No";       
    } else{
        $mirror = "Yes";
    }
 
-   if(!isset($_POST['bluetoof'])) {
+   if(!isset($_POST["bluetooth"])) {
        $bluetooth = "No";      
    } else{
        $bluetooth = "Yes";
    }
+
      // Check input errors before inserting in database
      if(empty($name_err) && empty($type_err) && empty($level_err) && empty($bag_err) && empty($passenger_err) && empty($transmission_err) && 
      empty($price_err) && empty($availability_err)){
@@ -236,12 +237,13 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
 ?>
 <div class="grid-container">
     <div class="form-header">
-                <h2>Car Update</h2>
+        <h2>Car Update</h2>
     </div>
     <div class=" tabs-content" data-tabs-content="example-tabs">
         <div class="tabs-panel is-active" id="update-browser">       
         <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                 <div>
+                <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                     <div class="grid-x grid-margin-x grid-padding-y">
                         <div class="cell medium-2">
                             <label>Vehicle Name:</label>
@@ -330,34 +332,34 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                         <div class="grid-x grid-padding-y grid-margin-y">
                             <div class="medium-11 cell">
                                 <legend>Vehicle Features:</legend><br>
-                                <input id="interior" type="checkbox"><label for="interior">Leather
-                                    Interior</label>
-                                <input id="radio" type="checkbox"><label for="radio">AM/FM Stereo
+                                <input id="interior" name="interior" type="checkbox"><label for="interior">Leather
+                                    Interior</label>                                 
+                                <input id="radio" name="radio" type="checkbox"><label for="radio">AM/FM Stereo
                                     Radio</label>
-                                <input id="conditioning" type="checkbox"><label for="conditioning">Air
+                                <input id="air" name="air" type="checkbox"><label for="conditioning">Air
                                     Conditioning</label>
-                                <input id="doors" type="checkbox"><label for="doors">Power Lock
+                                <input id="door" name="door" type="checkbox"><label for="doors">Power Lock
                                     Doors</label>
-                                <input id="control" type="checkbox"><label for="control1">Cruise
+                                <input id="control" name="control" type="checkbox"><label for="control1">Cruise
                                     Control</label>
-                                <input id="wheel" type="checkbox"><label for="wheel">Tilt Steering
+                                <input id="wheel" name="wheel" type="checkbox"><label for="wheel">Tilt Steering
                                     Wheel</label>
-                                <input id="mirrors" type="checkbox"><label for="mirrors">Power
+                                <input id="mirror" name="mirror" type="checkbox"><label for="mirrors">Power
                                     Mirrors</label>
-                                <input id="bluetooth" type="checkbox"><label for="bluetooth">Bluetooth</label>
-                                <input type="hidden" name="id" value="<?php echo $id; ?>"/>
+                                <input id="bluetooth" name="bluetooth" type="checkbox"><label for="bluetooth">Bluetooth</label>
                             </div>
                         </div><br>
                         <div class="grid-x">
                             <div class="cell medium-3">
-                                <button type="submit" value="Submit" class="btnSubmit">Update</button>
+                                <button type="submit" class="btnSubmit">Create</button>
+                                <button type="clear" class="btnSubmit">Clear</button>
                             </div>
                         </div>
                     </fieldset>
-                </div>
-            </form>
-        </div>       
-    </div><Br>
+                    </div>
+                </form>
+            </div>
+        </div><br>
     <p>
         <a href="details.php">Details</a> |
         <a href="delete.php">Delete</a> |

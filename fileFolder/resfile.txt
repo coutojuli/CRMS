@@ -1,0 +1,3 @@
+INSERT,8,juliana@test.ca,Chevrolet Malibu,2020-06-26,2020-06-30,Toronto,Company,367.36
+UPDATE,5,juliana@test.ca,Volkswagen Jetta,2020-06-26,2020-06-30,Toronto,Company,200.00,12
+DELETE,26

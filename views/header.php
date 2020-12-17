@@ -1,5 +1,5 @@
 <?php
- $root = $_SERVER['DOCUMENT_ROOT'];
+ $root = "http://".$_SERVER['SERVER_NAME'];
  session_start();
 ?>
 <!DOCTYPE html>
@@ -23,24 +23,40 @@
         <div class="top-bar-left">
             <ul class="dropdown menu" data-dropdown-menu>
                 <li class="menu-text">CRMS</li>
-                <li><a href="<?php $root?>/N01348498_PhpProject/views/home.php">Home</a></li>
-                <li><a href="<?php $root?>/N01348498_PhpProject/views/cars/cars.php">Cars</a></li>
-                <li><a href="<?php $root?>/N01348498_PhpProject/views/reservations/reservations.php">Reservations</a></li>
-                <li><a href="<?php $root?>/N01348498_PhpProject/views/pattern.php">File Pattern</a></li>
+                <li><a href="<?php echo $root?>/N01348498_PhpProject/views/home.php">Home</a></li>
+                <li><a href="<?php echo $root?>/N01348498_PhpProject/views/cars/cars.php">Cars</a></li>                
+                <?php                        
+                    if (isset($_SESSION['email'])){
+                            echo '<li><a href="'.$root.'/N01348498_PhpProject/views/reservations/reservations.php">Reservations</a></li>';
+                        if ($_SESSION['role'] == "Admin"){
+                            echo '<li><a href="'.$root.'/N01348498_PhpProject/views/pattern.php">File Pattern</a></li>';
+                        }
+                    }
+                ?>
             </ul>
         </div>
         <div class="top-bar-right">
             <ul class="dropdown menu" data-dropdown-menu>
                 <?php                    
                     if (isset($_SESSION["email"] )){
-                        echo '<li style="padding: .4rem 1rem;">Hello,' .$_SESSION["name"].'</li>';
-                    }                
-                ?>
-                <li><a href="<?php $root?>/N01348498_PhpProject/views/register.php">Register</a></li>
-                <li><a href="<?php $root?>/N01348498_PhpProject/views/login.php">Login</a></li>
-                <li><a href="<?php $root?>/N01348498_PhpProject/views/logout.php">Logout</a></li>
-                <li><a href="<?php $root?>/N01348498_PhpProject/views/resetPassword.php">Reset Password</a></li>
-                
+                        if ($_SESSION['role'] == "User" || $_SESSION['role'] == "Admin" ){                           
+                            $name = "Hello, ".($_SESSION["name"]);
+                            echo '<li style="padding: .4rem 1rem;">';
+                                echo '<a href="#">'.$name.'</a>'; 
+                                echo '<ul class="menu">';
+                                    echo '<li><a href="'.$root.'/N01348498_PhpProject/views/register.php">Register</a></li>';
+                                    echo '<li><a href="'.$root.'/N01348498_PhpProject/views/login.php">Login</a></li>';
+                                    echo '<li><a href="'.$root.'/N01348498_PhpProject/views/logout.php">Logout</a></li>';
+                                    echo '<li><a href="'.$root.'/N01348498_PhpProject/views/resetPassword.php">Reset Password</a></li>';
+                                echo '</ul>';
+                            echo '</li>';                           
+                      }        
+                    }    
+                    else{
+                        echo '<li><a href="'.$root.'/N01348498_PhpProject/views/register.php">Register</a></li>';
+                        echo '<li><a href="'.$root.'/N01348498_PhpProject/views/login.php">Login</a></li>';
+                    }    
+                ?>              
             </ul>
         </div>
     </div><br>
